@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: cio-feeder
+  profiles:
+    active: default
+    include: local
+
+server:
+  max-http-header-size: 8KB
+  compression:
+    enabled: true
+    mime-types: application/json
+    min-response-size: 2048
+
+logging.level:
+  org.springframework.web.bind.annotation.RestController: debug
