@@ -1,0 +1,46 @@
+covid/fukui/vaccine/ciofeeder/infrastructure/api/config/ApiSetting.java
+ covid.fukui.vaccine.ciofeeder.infrastructure.api.config.ApiSetting
+covid/fukui/vaccine/ciofeeder/infrastructure/api/config/JsonConfiguration.java
+ covid.fukui.vaccine.ciofeeder.infrastructure.api.config.JsonConfiguration
+covid/fukui/vaccine/ciofeeder/infrastructure/api/config/WebClientConfig.java
+ covid.fukui.vaccine.ciofeeder.infrastructure.api.config.WebClientConfig
+covid/fukui/vaccine/ciofeeder/infrastructure/api/repositoryimpl/CioRepositoryImpl.java
+ covid.fukui.vaccine.ciofeeder.infrastructure.api.repositoryimpl.CioRepositoryImpl
+covid/fukui/vaccine/ciofeeder/infrastructure/api/dto/VaccinationResponse.java
+ covid.fukui.vaccine.ciofeeder.infrastructure.api.dto.VaccinationResponse
+ covid.fukui.vaccine.ciofeeder.infrastructure.api.dto.VaccinationResponse$VaccinationResponseBuilder
+covid/fukui/vaccine/ciofeeder/CioFeederApplication.java
+ covid.fukui.vaccine.ciofeeder.CioFeederApplication
+covid/fukui/vaccine/ciofeeder/domain/repository/api/CioRepository.java
+ covid.fukui.vaccine.ciofeeder.domain.repository.api.CioRepository
+covid/fukui/vaccine/ciofeeder/domain/constant/Status.java
+ covid.fukui.vaccine.ciofeeder.domain.constant.Status
+covid/fukui/vaccine/ciofeeder/presentation/function/dto/PubSubMessage.java
+ covid.fukui.vaccine.ciofeeder.presentation.function.dto.PubSubMessage
+ covid.fukui.vaccine.ciofeeder.presentation.function.dto.PubSubMessage$PubSubMessageBuilder
+covid/fukui/vaccine/ciofeeder/config/ClockConfig.java
+ covid.fukui.vaccine.ciofeeder.config.ClockConfig
+covid/fukui/vaccine/ciofeeder/domain/constant/Age.java
+ covid.fukui.vaccine.ciofeeder.domain.constant.Age
+covid/fukui/vaccine/ciofeeder/infrastructure/db/dto/VaccinationCollection.java
+ covid.fukui.vaccine.ciofeeder.infrastructure.db.dto.VaccinationCollection
+ covid.fukui.vaccine.ciofeeder.infrastructure.db.dto.VaccinationCollection$VaccinationCollectionBuilder
+covid/fukui/vaccine/ciofeeder/domain/model/Vaccination.java
+ covid.fukui.vaccine.ciofeeder.domain.model.Vaccination
+ covid.fukui.vaccine.ciofeeder.domain.model.Vaccination$VaccinationBuilder
+covid/fukui/vaccine/ciofeeder/infrastructure/db/repositoryimpl/FirestoreRepositoryImpl.java
+ covid.fukui.vaccine.ciofeeder.infrastructure.db.repositoryimpl.FirestoreRepositoryImpl
+covid/fukui/vaccine/ciofeeder/domain/constant/Gender.java
+ covid.fukui.vaccine.ciofeeder.domain.constant.Gender
+covid/fukui/vaccine/ciofeeder/domain/constant/FukuiPopulation.java
+ covid.fukui.vaccine.ciofeeder.domain.constant.FukuiPopulation
+covid/fukui/vaccine/ciofeeder/domain/repository/db/FirestoreRepository.java
+ covid.fukui.vaccine.ciofeeder.domain.repository.db.FirestoreRepository
+covid/fukui/vaccine/ciofeeder/domain/constant/Prefecture.java
+ covid.fukui.vaccine.ciofeeder.domain.constant.Prefecture
+covid/fukui/vaccine/ciofeeder/exception/CioFeederException.java
+ covid.fukui.vaccine.ciofeeder.exception.CioFeederException
+covid/fukui/vaccine/ciofeeder/application/service/VaccinationService.java
+ covid.fukui.vaccine.ciofeeder.application.service.VaccinationService
+covid/fukui/vaccine/ciofeeder/presentation/function/CioFeedSubscriber.java
+ covid.fukui.vaccine.ciofeeder.presentation.function.CioFeedSubscriber

@@ -1,0 +1,16 @@
+---
+spring:
+  cloud:
+    gcp:
+      firestore:
+        project-id: covid19-fukui-316005
+        credentials:
+          location: classpath:service_account.json
+
+extension:
+  api:
+    cio:
+      base-url: https://vrs-data.cio.go.jp/vaccination/opendata/latest/prefecture.ndjson
+      connect-timeout: 10000
+      read-timeout: 10000
+      max-in-memory-size: 16777216
