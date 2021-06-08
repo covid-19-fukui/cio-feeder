@@ -89,7 +89,7 @@ dependencies {
 // bootRun タスクの設定を追加する
 bootRun {
     // プロファイルを指定する
-    jvmArgs = ['-Dspring.profiles.active=local']
+    jvmArgs = ['-Dspring.profiles.active=prod']
 }
 
 test {
