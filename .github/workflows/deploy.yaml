@@ -44,7 +44,7 @@ jobs:
             --project $GCP_SA_PROJECT_ID \
             --quiet \
             --entry-point=org.springframework.cloud.function.adapter.gcp.GcfJarLauncher \
-            --trigger-topic=favorite \
+            --trigger-topic=cio \
             --env-vars-file=env.yaml \
             --runtime=java11 \
             --region asia-northeast1 \
