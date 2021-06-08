@@ -3,9 +3,7 @@ spring:
   cloud:
     gcp:
       firestore:
-        project-id: covid19-fukui-316005
-        credentials:
-          location: classpath:service_account.json
+        project-id: ${PROJECT_ID}
 
 extension:
   api:

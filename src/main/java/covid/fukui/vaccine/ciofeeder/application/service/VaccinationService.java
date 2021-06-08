@@ -1,5 +1,6 @@
 package covid.fukui.vaccine.ciofeeder.application.service;
 
+import com.google.cloud.Timestamp;
 import covid.fukui.vaccine.ciofeeder.domain.constant.Age;
 import covid.fukui.vaccine.ciofeeder.domain.constant.FukuiPopulation;
 import covid.fukui.vaccine.ciofeeder.domain.constant.Gender;
@@ -152,7 +153,8 @@ public class VaccinationService {
                 now.format(DATE_FORMATTER));
 
         // 更新対象の日付
-        final Date date = Date.from(now.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        final Timestamp date =
+                Timestamp.of(Date.from(now.atStartOfDay(ZoneId.systemDefault()).toInstant()));
 
         // 当日の接種データ
         final List<Vaccination> vaccinationsToday = vaccinations.stream()

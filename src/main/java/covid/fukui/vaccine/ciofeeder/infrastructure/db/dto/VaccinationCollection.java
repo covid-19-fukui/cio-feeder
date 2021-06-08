@@ -1,19 +1,17 @@
 package covid.fukui.vaccine.ciofeeder.infrastructure.db.dto;
 
 
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.annotation.DocumentId;
 import java.io.Serializable;
-import java.util.Date;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 import org.springframework.cloud.gcp.data.firestore.Document;
 import org.springframework.lang.NonNull;
 
 @Document(collectionName = "vaccination")
-@Getter
 @ToString
 @RequiredArgsConstructor
 @EqualsAndHashCode
@@ -33,7 +31,7 @@ public class VaccinationCollection implements Serializable {
      * 接種日
      */
     @NonNull
-    private final Date date;
+    private final Timestamp date;
 
     /**
      * 都道府県コード
