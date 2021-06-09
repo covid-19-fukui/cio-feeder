@@ -201,7 +201,7 @@ public class VaccinationService {
                         countEachGenderFirst.get(Gender.MALE) : 0);
         final Integer countMaleSecond =
                 floorCount(Objects.nonNull(countEachGenderSecond) ?
-                        countEachGenderFirst.get(Gender.MALE) : 0);
+                        countEachGenderSecond.get(Gender.MALE) : 0);
         final Float percentageMaleFirst =
                 calculatePercentage(totalEachGenderByStatus.get(Status.FIRST).get(Gender.MALE),
                         FukuiPopulation.MALE.getCount());
@@ -215,7 +215,7 @@ public class VaccinationService {
                         countEachGenderFirst.get(Gender.FEMALE) : 0);
         final Integer countFemaleSecond =
                 floorCount(Objects.nonNull(countEachGenderSecond) ?
-                        countEachGenderFirst.get(Gender.FEMALE) : 0);
+                        countEachGenderSecond.get(Gender.FEMALE) : 0);
         final Float percentageFemaleFirst =
                 calculatePercentage(totalEachGenderByStatus.get(Status.FIRST).get(Gender.FEMALE),
                         FukuiPopulation.FEMALE.getCount());
@@ -233,7 +233,7 @@ public class VaccinationService {
                         Objects.nonNull(countEachAgeFirst) ? countEachAgeFirst.get(Age.YOUNG) : 0);
         final Integer countYoungSecond =
                 floorCount(
-                        Objects.nonNull(countEachAgeSecond) ? countEachAgeFirst.get(Age.YOUNG) : 0);
+                        Objects.nonNull(countEachAgeSecond) ? countEachAgeSecond.get(Age.YOUNG) : 0);
         final Float percentageYongFirst =
                 calculatePercentage(totalEachAgeByStatus.get(Status.FIRST).get(Age.YOUNG),
                         FukuiPopulation.YOUNG.getCount());
@@ -246,7 +246,7 @@ public class VaccinationService {
                 floorCount(Objects.nonNull(countEachAgeFirst) ? countEachAgeFirst.get(Age.OLD) : 0);
         final Integer countOldSecond =
                 floorCount(
-                        Objects.nonNull(countEachAgeSecond) ? countEachAgeFirst.get(Age.OLD) : 0);
+                        Objects.nonNull(countEachAgeSecond) ? countEachAgeSecond.get(Age.OLD) : 0);
         final Float percentageOldFirst =
                 calculatePercentage(totalEachAgeByStatus.get(Status.FIRST).get(Age.OLD),
                         FukuiPopulation.OLD.getCount());
