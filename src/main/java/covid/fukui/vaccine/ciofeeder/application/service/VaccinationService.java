@@ -53,7 +53,8 @@ public class VaccinationService {
     @NonNull
     public Mono<VaccinationCollection> saveVaccination() {
 
-        final LocalDate now = LocalDate.now(clock);
+        // 現在の日付の前日分を更新
+        final LocalDate now = LocalDate.now(clock).minusDays(1);
 
         return cioRepository.getVaccination()
                 .map(this::buildVaccination)
