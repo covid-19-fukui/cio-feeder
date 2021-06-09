@@ -3,7 +3,7 @@ spring:
     name: cio-feeder
   profiles:
     active: default
-    include: prod
+    include: local
 
 server:
   max-http-header-size: 8KB
