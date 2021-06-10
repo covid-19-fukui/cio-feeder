@@ -10,10 +10,24 @@ import org.springframework.lang.NonNull;
 @Configuration
 public class ClockConfig {
 
+    /**
+     * クロックのbean取得
+     *
+     * @return clockのbean
+     */
     @Bean
     @NonNull
     public Clock clock() {
-//        return Clock.systemDefaultZone();
+        return Clock.systemDefaultZone();
+    }
+
+    /**
+     * 固定されたクロックのbean取得
+     *
+     * @return clockのbean
+     */
+    @NonNull
+    private Clock getFixedClock() {
         return Clock.fixed(ZonedDateTime.of(
                 2021,
                 6,

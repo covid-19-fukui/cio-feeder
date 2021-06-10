@@ -1,5 +1,6 @@
 package covid.fukui.vaccine.ciofeeder.application.service;
 
+import com.google.cloud.Timestamp;
 import covid.fukui.vaccine.ciofeeder.domain.constant.Age;
 import covid.fukui.vaccine.ciofeeder.domain.constant.FukuiPopulation;
 import covid.fukui.vaccine.ciofeeder.domain.constant.Gender;
@@ -52,7 +53,8 @@ public class VaccinationService {
     @NonNull
     public Mono<VaccinationCollection> saveVaccination() {
 
-        final LocalDate now = LocalDate.now(clock);
+        // 現在の日付の前日分を更新
+        final LocalDate now = LocalDate.now(clock).minusDays(1);
 
         return cioRepository.getVaccination()
                 .map(this::buildVaccination)
@@ -152,7 +154,8 @@ public class VaccinationService {
                 now.format(DATE_FORMATTER));
 
         // 更新対象の日付
-        final Date date = Date.from(now.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        final Timestamp date =
+                Timestamp.of(Date.from(now.atStartOfDay(ZoneId.systemDefault()).toInstant()));
 
         // 当日の接種データ
         final List<Vaccination> vaccinationsToday = vaccinations.stream()
@@ -198,7 +201,7 @@ public class VaccinationService {
                         countEachGenderFirst.get(Gender.MALE) : 0);
         final Integer countMaleSecond =
                 floorCount(Objects.nonNull(countEachGenderSecond) ?
-                        countEachGenderFirst.get(Gender.MALE) : 0);
+                        countEachGenderSecond.get(Gender.MALE) : 0);
         final Float percentageMaleFirst =
                 calculatePercentage(totalEachGenderByStatus.get(Status.FIRST).get(Gender.MALE),
                         FukuiPopulation.MALE.getCount());
@@ -212,7 +215,7 @@ public class VaccinationService {
                         countEachGenderFirst.get(Gender.FEMALE) : 0);
         final Integer countFemaleSecond =
                 floorCount(Objects.nonNull(countEachGenderSecond) ?
-                        countEachGenderFirst.get(Gender.FEMALE) : 0);
+                        countEachGenderSecond.get(Gender.FEMALE) : 0);
         final Float percentageFemaleFirst =
                 calculatePercentage(totalEachGenderByStatus.get(Status.FIRST).get(Gender.FEMALE),
                         FukuiPopulation.FEMALE.getCount());
@@ -230,7 +233,7 @@ public class VaccinationService {
                         Objects.nonNull(countEachAgeFirst) ? countEachAgeFirst.get(Age.YOUNG) : 0);
         final Integer countYoungSecond =
                 floorCount(
-                        Objects.nonNull(countEachAgeSecond) ? countEachAgeFirst.get(Age.YOUNG) : 0);
+                        Objects.nonNull(countEachAgeSecond) ? countEachAgeSecond.get(Age.YOUNG) : 0);
         final Float percentageYongFirst =
                 calculatePercentage(totalEachAgeByStatus.get(Status.FIRST).get(Age.YOUNG),
                         FukuiPopulation.YOUNG.getCount());
@@ -243,7 +246,7 @@ public class VaccinationService {
                 floorCount(Objects.nonNull(countEachAgeFirst) ? countEachAgeFirst.get(Age.OLD) : 0);
         final Integer countOldSecond =
                 floorCount(
-                        Objects.nonNull(countEachAgeSecond) ? countEachAgeFirst.get(Age.OLD) : 0);
+                        Objects.nonNull(countEachAgeSecond) ? countEachAgeSecond.get(Age.OLD) : 0);
         final Float percentageOldFirst =
                 calculatePercentage(totalEachAgeByStatus.get(Status.FIRST).get(Age.OLD),
                         FukuiPopulation.OLD.getCount());

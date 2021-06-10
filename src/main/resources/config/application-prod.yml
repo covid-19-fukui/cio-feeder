@@ -4,8 +4,6 @@ spring:
     gcp:
       firestore:
         project-id: ${PROJECT_ID}
-        credentials:
-          location: classpath:service_account.json
 
 extension:
   api:
